@@ -27,6 +27,7 @@ def index():
 
     return json.dumps(resp.json(), indent=4)
 
+
 def create_bearer_credentials(consumer_key, consumer_secret):
     return base64_encode(':'.join([url_encode(consumer_key), url_encode(consumer_secret)]))
 
