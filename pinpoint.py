@@ -11,7 +11,7 @@ from urllib import quote_plus
 CONSUMER_KEY = os.environ['APP_KEY']
 CONSUMER_SECRET = os.environ['APP_SECRET']
 CONSUMER_SECRET_KEY = os.environ['APP_SECRET_KEY']
-API_KEY = os.environ['API_KEY']
+GMAP_KEY = os.environ['GMAP_KEY']
 
 app = Flask(__name__)
 
@@ -27,9 +27,9 @@ def index():
     
     resp_coord = resp.json()[0]['coordinates']
     
-    lng = 150.644
-    lat = - 34.397
-    return render_template('pinpoint.html', lng=lng, lat=lat, resp=resp, test_coord = coord)
+    lng = 24.8647200
+    lat = 57.1519400
+    return render_template('pinpoint.html', lng=lng, lat=lat,  resp_coord = resp_coord)
     
 
 def create_bearer_credentials(consumer_key, consumer_secret):
